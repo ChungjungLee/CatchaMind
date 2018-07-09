@@ -30,27 +30,26 @@ class ViewController: UIViewController {
     func setLayout() -> Void {
         firstView.translatesAutoresizingMaskIntoConstraints = false
         firstView.backgroundColor = UIColor.red
-        firstView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        firstView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        firstView.heightAnchor.constraint(equalToConstant: view.bounds.size.height * 0.25).isActive = true
+        firstView.widthAnchor.constraint(equalToConstant: view.bounds.size.width * 0.5).isActive = true
         
         secondView.translatesAutoresizingMaskIntoConstraints = false
-        secondView.backgroundColor = UIColor.blue
-        secondView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        secondView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        secondView.backgroundColor = UIColor.orange
+        secondView.heightAnchor.constraint(equalToConstant: view.bounds.size.height * 0.25).isActive = true
+        secondView.widthAnchor.constraint(equalToConstant: view.bounds.size.width * 0.5).isActive = true
         secondView.topAnchor.constraint(equalTo: firstView.bottomAnchor).isActive = true
         
         thirdView.translatesAutoresizingMaskIntoConstraints = false
-        thirdView.backgroundColor = UIColor.purple
-        thirdView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        thirdView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        thirdView.leftAnchor.constraint(equalTo: firstView.rightAnchor).isActive = true
+        thirdView.backgroundColor = UIColor.yellow
+        thirdView.heightAnchor.constraint(equalToConstant: view.bounds.size.height * 0.25).isActive = true
+        thirdView.widthAnchor.constraint(equalToConstant: view.bounds.size.width * 0.5).isActive = true
+        thirdView.topAnchor.constraint(equalTo: secondView.bottomAnchor).isActive = true
         
         fourthView.translatesAutoresizingMaskIntoConstraints = false
         fourthView.backgroundColor = UIColor.green
-        fourthView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        fourthView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        fourthView.heightAnchor.constraint(equalToConstant: view.bounds.size.height * 0.25).isActive = true
+        fourthView.widthAnchor.constraint(equalToConstant: view.bounds.size.width * 0.5).isActive = true
         fourthView.topAnchor.constraint(equalTo: thirdView.bottomAnchor).isActive = true
-        fourthView.leftAnchor.constraint(equalTo: secondView.rightAnchor).isActive = true
     }
 
     override func didReceiveMemoryWarning() {
