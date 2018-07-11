@@ -24,6 +24,8 @@ class ViewController: UIViewController {
         view.addSubview(thirdView)
         view.addSubview(fourthView)
         
+        uiResult.isHidden = true
+        
         setLayout();
     }
     
@@ -57,7 +59,37 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBOutlet var uiLabel: UILabel!
+    @IBOutlet var uiResult: UILabel!
+    
+    @IBOutlet var uiIdInput: UITextField!
+    @IBOutlet var uiPwInput: UITextField!
+    
+    let id = "hyein park"
+    let pw = "huiren0704"
+    
+    @IBAction func loginClicked(_ sender: Any) {
+        
+        let userId = uiIdInput.text
+        let userPw = uiPwInput.text
+        
+        let alert = UIAlertController(title: "알림", message: "아이디: \(userId!) \n비밀번호: \(userPw!)", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "확인", style: .default) { (alert:UIAlertAction!) -> Void in
+            NSLog("알림 대화상자의 확인 버튼 클릭")
+            
+            self.uiResult.isHidden = false
+            if (userId == self.id && userPw == self.pw) {
+                self.uiResult.text = "로그인 성공"
+                
+            } else {
+                self.uiResult.text = "로그인 실패"
+            }
+        }
+        
+        alert.addAction(okAction)
+        present(alert, animated:true, completion: nil)
+    }
 
 }
-
